@@ -32,7 +32,11 @@ The work is organized into three tasks, each in its folder.
 - Postman collection with:
   - Positive and negative test cases
   - Collection variables
- 
+  - Assertions for status codes and response structure
+
+**Notes:** 
+- The API is public and intended for learning purposes, and behavior may not always be consistent.
+
 
 **Format:** Postman Collection (JSON)  
-**Location:** 
+**Location:** `Task 3/QA Interview Challenge.postman_collection.json`
