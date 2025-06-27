@@ -8,7 +8,10 @@ The work is organized into three tasks, each in its folder.
 ## Task 1: Test Cases
 
 **What’s included:**  
-- A set of well-structured positive and negative test cases  
+- A set of well-structured positive and negative test cases
+- This test suite focuses on the Parent Web Experience, as outlined in the task description.
+- The routines feature requires linking a physical mobile device to the test account to simulate or validate app restrictions and time slots.
+  I didn't link my phone for security and privacy reasons and used an existing child in My Family.
 
 **Format:** Excel spreadsheet  
 **Location:** `Task 1/TestCases_Routines.xlsx`
