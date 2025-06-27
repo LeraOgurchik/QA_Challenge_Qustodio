@@ -1,6 +1,3 @@
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=LeraOgurchik.QA_Challenge_Qustodio)
-
-
 
 # Qustodio QA Assignment
 
