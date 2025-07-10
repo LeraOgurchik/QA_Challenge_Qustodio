@@ -1,0 +1,39 @@
+name: Run API tests with Newman
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Newman and HTML reporter
+      run: |
+        npm install -g newman
+        npm install -g newman-reporter-html
+
+    - name: Run Postman tests
+      run: |
+        newman run Task 2/QA_Interview_Challenge.postman_collection.json \
+          --environment Task 2/env.json \
+          --reporters cli,html \
+          --reporter-html-export newman/report.html
+
+    - name: Upload HTML report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: postman-html-report
+        path: newman/report.html
