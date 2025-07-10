@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # ✅ latest version
 
     - name: Install Node.js
       uses: actions/setup-node@v3
@@ -26,14 +26,11 @@ jobs:
 
     - name: Run Postman tests
       run: |
-        newman run Task 3/QA_Interview_Challenge.postman_collection.json \
-          --environment Task 3/env.json \
+        newman run tests/QA_Interview_Challenge.postman_collection.json \
+          --environment tests/env.json \
           --reporters cli,html \
           --reporter-html-export newman/report.html
 
     - name: Upload HTML report
       if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: postman-html-report
-        path: newman/report.html
+      uses:
