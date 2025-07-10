@@ -30,7 +30,7 @@ jobs:
       - name: Run Postman tests
         run: |
           newman run Task 3/QA Interview Challenge.postman_collection.json \
-            --environment tests/env.json \
+            --environment Task 3/env.json \
             --reporters cli,html \
             --reporter-html-export newman/report.html
 
