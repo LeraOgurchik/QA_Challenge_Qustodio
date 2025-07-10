@@ -24,9 +24,11 @@ jobs:
           npm install -g newman
           npm install -g newman-reporter-html
 
+      - name: Create report folder
+        run: mkdir -p newman
+
       - name: Run Postman tests
         run: |
-          mkdir -p newman
           newman run Task 3/QA Interview Challenge.postman_collection.json \
             --environment tests/env.json \
             --reporters cli,html \
