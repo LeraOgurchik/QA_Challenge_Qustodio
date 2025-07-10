@@ -35,9 +35,16 @@ jobs:
             --reporters cli,allure \
             --reporter-allure-export allure-results
 
+      - name: List allure-results contents
+        run: ls -la allure-results
+
       - name: Generate Allure HTML report
         run: |
           allure generate allure-results --clean -o allure-report
+          ls -la allure-report
+
+      - name: List root directory contents
+        run: ls -la
 
       - name: Upload Allure HTML report
         uses: actions/upload-artifact@v4
@@ -45,4 +52,5 @@ jobs:
         with:
           name: allure-html-report
           path: allure-report
+
 
